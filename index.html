@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arif Billah</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <form
+      action="https://contact-arifbillah.herokuapp.com/data"
+      method="post"
+      class="form"
+    >
+      <input
+        type="text"
+        id="name"
+        placeholder="Name...."
+        autofocus
+        required
+        maxlength="100"
+        name="name"
+      />
+      <input
+        type="email"
+        id="email"
+        placeholder="Email....."
+        autofocus
+        required
+        maxlength="100"
+        name="email"
+      />
+      <textarea
+        name="msg"
+        cols="30"
+        rows="10"
+        id="msg"
+        placeholder="Message...."
+        autofocus
+        required
+        maxlength="10000"
+      ></textarea>
+      <div id="btns">
+        <button type="submit" class="submit">Submit</button>
+        <button type="reset">Clear</button>
+      </div>
+    </form>
+  </body>
+</html>
