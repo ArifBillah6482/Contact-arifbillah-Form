@@ -5,15 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arif Billah</title>
+    <script src="./axios.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <form
-      action="https://contact-arifbillah.herokuapp.com/data"
-      method="post"
-      class="form"
-    >
+    <div class="logoDiv">
+      <img src="./Arif Billah Logo.png" width="100px" alt="Arif Billah Logo" />
+      <img
+        src="./Arif Billah.png"
+        width="100px"
+        height="100px"
+        alt="Arif Billah"
+      />
+    </div>
+
+    <form class="form">
       <input
         type="text"
         id="name"
@@ -42,10 +48,12 @@
         required
         maxlength="10000"
       ></textarea>
+      <p style="padding: 3px 0 0 0px; color: white" class="alertText"></p>
       <div id="btns">
         <button type="submit" class="submit">Submit</button>
         <button type="reset">Clear</button>
       </div>
     </form>
+    <script src="./index.js"></script>
   </body>
 </html>
