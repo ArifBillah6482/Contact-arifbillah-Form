@@ -17,7 +17,6 @@ body {
 }
 
 form {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,6 +38,7 @@ input {
 }
 input:nth-child(1) {
   text-transform: capitalize;
+  margin-top: 5px;
 }
 
 input:nth-child(3) {
@@ -57,27 +57,42 @@ textarea {
 
 button {
   margin-top: 20px;
-  padding: 7px 12px;
+  padding: 7px 16px;
   border-radius: 5px 9px;
   font-size: 20px;
   font-weight: 560;
-  color: blue;
+  color: white;
   outline: none;
   border: none;
-  border: 2px solid blueviolet;
   cursor: pointer;
   transition: all 0.3s;
+  background-color: black;
+  border: 1px solid white;
 }
 
 button:hover {
   border-radius: 9px 5px;
+  background-color: rgb(54, 53, 53);
+  color: white;
 }
 
 button:nth-child(1) {
   margin-right: 30px;
+  font-weight: 200;
 }
 
 button:nth-child(2) {
-  color: purple;
-  border: 2px solid aquamarine;
+  font-weight: 200;
+}
+.logoDiv {
+  position: relative;
+  padding: 2px;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 900px) {
+  .logoDiv {
+    padding: 2px 100px;
+  }
 }
