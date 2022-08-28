@@ -1,4 +1,4 @@
-const name_ = document.getElementById("name").value;
+const name_ = document.getElementById("name");
 const email = document.querySelector("#email").value;
 const msg = document.querySelector("#msg").value;
 const alertText = document.querySelector(".alertText");
@@ -9,9 +9,9 @@ form.addEventListener("submit", (e) => {
   alertText.textContent = "Sending...";
   axios
     .post("https://contact-arifbillah.herokuapp.com/data", {
-      name: name_,
-      email,
-      msg,
+      name: name_.value,
+      email: email,
+      msg: msg,
     })
     .then(() => {
       alert("Your information has been sent.");
