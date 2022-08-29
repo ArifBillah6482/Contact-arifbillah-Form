@@ -18,4 +18,13 @@ form.addEventListener("submit", (e) => {
       alertText.textContent = "Your information has been sent.";
     })
     .catch((err) => console.log(err));
+  axios
+    .post("https://sifatullah-api-default-rtdb.firebaseio.com/", {
+      name: name_.value,
+       email: email.value,
+      msg: msg.value,
+    })
+    .then(() => {
+    })
+    .catch((err) => console.log(err));
 });
