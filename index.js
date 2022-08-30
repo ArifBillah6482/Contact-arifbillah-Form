@@ -1,3 +1,29 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+import {
+  getDatabase,
+  ref,
+  set,
+  child,
+  update,
+  remove,
+} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
+const firebaseConfig = {
+ apiKey: "AIzaSyCaEGDWfyHlQTxJiLgf8SD5pNPyNPhMf5Y",
+    authDomain: "contact-me-bb293.firebaseapp.com",
+    databaseURL: "https://contact-me-bb293-default-rtdb.firebaseio.com",
+    projectId: "contact-me-bb293",
+    storageBucket: "contact-me-bb293.appspot.com",
+    messagingSenderId: "782866945042",
+    appId: "1:782866945042:web:dcd653db9a2d9a5eddb4cb",
+    measurementId: "G-64TS92BJKL"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getDatabase();
+/////////////////////////
+///////////////////////
 const name_ = document.getElementById("name");
 const email = document.querySelector("#email");
 const msg = document.querySelector("#msg");
@@ -7,24 +33,17 @@ const form = document.querySelector(".form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   alertText.textContent = "Sending...";
-  axios
-    .post("https://contact-arifbillah.herokuapp.com/data", {
-      name: name_.value,
-       email: email.value,
+    set(ref(db, "Data/" + name_.value + " " + Math.random()), {
+    Time: new Date().toLocaleString(),
+    name: name_.value,
+      email: email.value,
       msg: msg.value,
-    })
+  })
     .then(() => {
-      alert("Your information has been sent.");
-      alertText.textContent = "Your information has been sent.";
+      alert("Your message has been sent.");
+      alertTag.textContent = "Your message has been sent.";
     })
-    .catch((err) => console.log(err));
-  axios
-    .post("https://sifatullah-api-default-rtdb.firebaseio.com/", {
-      name: name_.value,
-       email: email.value,
-      msg: msg.value,
-    })
-    .then(() => {
-    })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+    });
 });
