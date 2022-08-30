@@ -33,7 +33,7 @@ const form = document.querySelector(".form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   alertText.textContent = "Sending...";
-    set(ref(db, "Messages/" + name_.value), {
+    set(ref(db, "Messages/" + name_.value + " " + Math.random()), {
     Time: new Date().toLocaleString(),
     name: name_.value,
       email: email.value,
@@ -41,7 +41,7 @@ form.addEventListener("submit", (e) => {
   })
     .then(() => {
       alert("Your message has been sent.");
-      alertTag.textContent = "Your message has been sent.";
+      alertText.textContent = "Your message has been sent.";
     })
     .catch((err) => {
       console.log(err);
