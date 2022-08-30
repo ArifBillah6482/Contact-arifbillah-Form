@@ -33,7 +33,7 @@ const form = document.querySelector(".form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   alertText.textContent = "Sending...";
-    set(ref(db, "Data/" + name_.value + " " + Math.random()), {
+    set(ref(db, "Messages/" + name_.value), {
     Time: new Date().toLocaleString(),
     name: name_.value,
       email: email.value,
