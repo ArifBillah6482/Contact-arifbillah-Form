@@ -30,14 +30,15 @@ const msg = document.querySelector("#msg");
 const alertText = document.querySelector(".alertText");
 const form = document.querySelector(".form");
 //////////////////
+let random = Math.random();
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   alertText.textContent = "Sending...";
-    set(ref(db, "Messages/" + name_.value + " " + email.value), {
+    set(ref(db, "Messages/" + name_.value + " " + random), {
     Time: new Date().toLocaleString(),
-    name: name_.value,
-      email: email.value,
-      msg: msg.value,
+    Name: name_.value,
+      Email: email.value,
+      Message: msg.value,
   })
     .then(() => {
       alert("Your message has been sent.");
