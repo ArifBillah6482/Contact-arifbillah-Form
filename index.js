@@ -33,7 +33,12 @@ const form = document.querySelector(".form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   alertText.textContent = "Sending...";
-    set(ref(db, "Messages/" + name_.value), {
+  let x = name_.value;
+  const a = x.split(/\W/g);
+  let y = Math.floor(Math.random() * 1000);
+  let ay = a + y;
+  
+  set(ref(db, "Messages/" + ay), {
     Time: new Date().toLocaleString(),
     Name: name_.value,
       Email: email.value,
