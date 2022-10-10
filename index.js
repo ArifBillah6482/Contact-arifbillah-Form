@@ -47,7 +47,7 @@ form.addEventListener("submit", (e) => {
   let y = Math.floor(Math.random() * 1000);
   let ay = a + y;
   
-  set(ref(db, "Messages/" + ay), {
+  set(ref(db, "Data/" + ay), {
     Time: new Date().toLocaleString(),
     Name: name_.value,
       Email: email.value,
